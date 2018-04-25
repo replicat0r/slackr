@@ -21,7 +21,13 @@ config :slackr, Slackr.Endpoint,
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
-
+  
+config :guardian, Guardian,
+  issuer: "Slackr",
+  ttl: {30, :days},
+  verify_issuer: true,
+  serializer: Slackr.GuardianSerializer,
+  secret_key: "LG17BzmhBeq81Yyyn6vH7GVdrCkQpLktol2vdXlBzkRRHpYsZwluKMG9r6fnu90m"
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
