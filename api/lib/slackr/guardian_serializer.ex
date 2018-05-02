@@ -1,4 +1,4 @@
-defmodule Sling.GuardianSerializer do
+defmodule Slackr.GuardianSerializer do
   @behaviour Guardian.Serializer
 
   alias Slackr.Repo
